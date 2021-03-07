@@ -80,7 +80,7 @@ const Form = ({ setCategory, setCountry }) => {
 
     return (
         <div className={`${styles.buscador} row`}>
-            <div className='col s12 m8 offset.m2'>
+            <div className='col s12 m8 offset-m2'>
                 <form onSubmit={searchNews}>
                     <h2 className={styles.heading}>Find news by category</h2>
                     <SelectCountries />
