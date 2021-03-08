@@ -1,12 +1,12 @@
 const News = ({ news }) => {
-    const { urlToImage, url, title, description, source } = news;
+    const { image, url, title, description, source } = news;
 
     return (
         <div className='col s12 m6 l4'>
             <div className='card'>
-                {urlToImage && (
+                {image && (
                     <div className='card-image'>
-                        <img src={urlToImage} alt={title} />
+                        <img src={image} alt={title} />
                         <span className='card-title'>{source.name}</span>
                     </div>
                 )}

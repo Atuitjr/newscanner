@@ -13,15 +13,16 @@ function App() {
         const callAPI = async () => {
             if (category.trim() === '' || country.trim() === '') return null;
 
-            const API_KEY = 'a4d1d22931b7489c9fb8d456294f1ec4';
-            const uri = 'https://newsapi.org/v2/top-headlines?';
-            const countrySelected = `country=${country}&`;
-            const categorySelected = `category=${category}&`;
-            const apiKey = `apiKey=${API_KEY}`;
-            const url = `${uri}${countrySelected}${categorySelected}${apiKey}`;
+            const API_KEY = 'f3674268921539ccf1cb53a4294e1d92';
+            const uri = 'https://gnews.io/api/v4/top-headlines?';
+            const countrySelected = `country=${country}`;
+            const categorySelected = `topic=${category}`;
+            const apiKey = `token=${API_KEY}`;
+            const url = `${uri}${categorySelected}&${countrySelected}&${apiKey}`;
 
             const answer = await fetch(url);
             const newNews = await answer.json();
+            console.log(newNews);
             setNews(newNews.articles);
         };
         callAPI();
